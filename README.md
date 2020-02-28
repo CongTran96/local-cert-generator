@@ -1,5 +1,7 @@
 # HTTPS for `localhost`
 
+Blog for this tool: [https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/)
+
 A set of scripts to quickly generate a HTTPS certificate for your local development environment.
 
 ## How-to
@@ -26,13 +28,23 @@ sh createRootCA.sh
 
 *Note*: You may need to restart your browser to load the newly trusted root certificate correctly.
 
-4. Run the script to create a domain certificate for `localhost`: 
+4. Add you domain to `v3.ext` file
+
+Please rename `yourdomain.com` to your domain name.
+```
+
+  [alt_names]
+  DNS.1 = localhost
+  DNS.2 = yourdomain.com 
+```
+
+5. Run the script to create a domain certificate for `localhost`: 
 
 ```
 sh createSelfSigned.sh
 ```
 
-5. Move `server.key` and `server.crt` to an accessible location on your server and include them when starting it. In an Express app running on Node.js, you'd do something like this:
+6. Move `server.key` and `server.crt` to an accessible location on your server and include them when starting it. In an Express app running on Node.js, you'd do something like this:
 
 ```js
 var path = require('path')
