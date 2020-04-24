@@ -23,6 +23,9 @@ sh createRootCA.sh
     - **macOS**: Open Keychain Access and import the root certificate to your System keychain. Then mark the certificate as trusted.
 
     ![Trust root certificate](https://cdn-images-1.medium.com/max/1600/1*NWwMb0yV9ClHDj87Kug9Ng.png)
+    
+    Double click the imported certificate and change the “When using this certificate:” dropdown to Always Trust in the Trust section.
+
 
     - **Linux**: Depending on your Linux distribution, you can use `trust`, `update-ca-certificates` or another command to mark the generated root certificate as trusted.
 
