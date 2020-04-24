@@ -18,6 +18,10 @@ cd local-cert-generator
 sh createRootCA.sh
 ```
 
+Enter the infomation like following:
+![alt text](https://cdn-media-1.freecodecamp.org/images/1*76xehIse7mPGF094ojiBBw.png)
+
+
 3. Add the root certificate we just generated to your list of trusted certificates. This step depends on the operating system you're running:
 
     - **macOS**: Open Keychain Access and import the root certificate to your System keychain. Then mark the certificate as trusted.
